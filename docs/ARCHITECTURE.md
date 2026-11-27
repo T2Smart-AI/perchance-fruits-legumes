@@ -14,9 +14,9 @@ Auto-generated structural notes (kind: game, mode: engine).
 ### core
 - src/app.js (19330 B)
 ### support
-- src/data/products.js (262457 B)
 - src/data/local.js (6101 B)
 - src/data/avatars.js (12665 B)
+- src/data/products.js (262457 B)
 - src/data/banners.js (12665 B)
 - src/game.js (64102 B)
 - src/data/nutrition.js (31980 B)
