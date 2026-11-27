@@ -1,86 +1,81 @@
 ```markdown
-<p align="center">
-  <img src="assets/logo.jpg" width="128" alt="logo">
-  <h1 align="center">fruits-legumes</h1>
-  <p align="center"><i>Découvrez quels fruits et légumes sont de saison et cultivés localement en Belgique, mois par mois.</i></p>
-  <p align="center"><b>Art / Engine</b></p>
-  <p align="center">
-    <a href="https://T2Smart-AI.github.io/perchance-fruits-legumes/">Live Demo</a> | 
-    <a href="showcase.html">Showcase</a> | 
-    <a href="screenshots/">Gallery</a>
-  </p>
-</p>
+<div align="center">
+  <img src="assets/logo.jpg" alt="Logo" width="200">
+  <h1>fruits-legumes</h1>
+  <p><i>Découvrez quels fruits et légumes sont de saison et cultivés localement en Belgique, mois par mois.</i></p>
+  <p><b>Catégorie:</b> Art / Jeu</p>
+  <a href="https://T2Smart-AI.github.io/perchance-fruits-legumes/">Live Demo</a> | <a href="showcase.html">Showcase</a> | <a href="screenshots/">Gallery</a>
+</div>
 
----
+<hr>
 
-## 🇫🇷 Français
+## 🇧🇪 Français
 
 ### Description
-Application interactive dédiée à la saisonnalité des fruits et légumes en Belgique. Elle propose un calendrier détaillé, des fiches nutritionnelles, des conseils de préparation et un jeu de match-3 éducatif.
+Une application interactive dédiée à la consommation locale en Belgique. Elle propose un calendrier saisonnier, des fiches nutritionnelles détaillées, des conseils de préparation et un jeu de match-3 éducatif pour apprendre à mieux choisir ses produits.
 
 ### Fonctionnalités
-- **Navigation & Contenu** :
-  - `Fruits & Légumes de Saison` (Accueil)
-  - `L'Almanach` : Fiches détaillées et bienfaits.
-  - `Le Calendrier` : Vue mensuelle interactive.
-  - `Manger Local` : Guide des produits locaux.
-  - `Match des Saisons` : Jeu de match-3 intégré.
-- **Interface** : Overlay de détails, gestion i18n, rendu via Canvas.
-- **Système** : Stockage via kv-plugin (IndexedDB).
+*   **Exploration :** Calendrier interactif et Almanach des produits.
+*   **Localisation :** Section dédiée aux produits cultivés en Belgique.
+*   **Éducation :** Fiches détaillées incluant les bienfaits et conseils de préparation.
+*   **Ludification :** Jeu "Match des Saisons" (Match-3).
+*   **Interface :** Navigation fluide entre l'accueil, l'almanach, le calendrier, le jeu et la vue locale via un overlay de détails.
 
 ### Contrôles
-- **Souris/Toucher** : Interaction via les boutons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `←`, `→`, `↻`, `✕`).
-- **Clavier** : Non spécifié.
+*   **Souris/Toucher :** Interaction via les boutons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `Recommencer`).
+*   **Navigation :** Flèches de navigation (`<`, `>`) et retour arrière ($\leftarrow$).
+*   **Fermeture :** Bouton $\times$ pour fermer les overlays.
 
-### Installation rapide
-- **Windows** : Double-cliquez sur `start.cmd`.
-- **macOS/Linux** : Exécutez `sh start.sh`.
-- **Autre** : `python3 -m http.server` (un serveur HTTP est requis pour les modules ES).
+### Installation Rapide
+*   **Windows :** Double-cliquez sur `start.cmd`.
+*   **macOS/Linux :** Exécutez `sh start.sh`.
+*   **Alternative :** Lancez `python3 -m http.server` (un serveur HTTP est requis pour le chargement des modules ES).
 
 ### Personnalisation
-| Variable | Rôle | Source |
+| Variable | Description | Source |
 | :--- | :--- | :--- |
-| `products` | Liste des produits | `src/data/products.js` |
-| `nutrition` | Valeurs nutritionnelles | `src/data/nutrition.js` |
-| `avatars` | Prompts IA & Images | `src/data/avatars.js` |
-| `levels` | Configuration du jeu | `src/levels.js` |
+| Produits | Liste des fruits et légumes | `src/data/products.js` |
+| Localisation | Données locales Belgique | `src/data/local.js` |
+| Nutrition | Valeurs nutritionnelles | `src/data/nutrition.js` |
+| Niveaux | Configuration du jeu | `src/levels.js` |
+| Visuels | Bannières et avatars | `src/data/banners.js` / `avatars.js` |
 
 ### Structure du Projet
-- `src/app.js` : Cœur de l'application.
-- `src/game.js` : Logique du jeu de match-3.
-- `src/data/` : Fichiers de données (locaux, nutrition, bannières).
-- `src/tools/` : Prompts pour la génération d'avatars IA.
+*   `src/app.js` : Cœur de l'application.
+*   `src/game.js` : Logique du jeu de match-3.
+*   `src/data/` : Données et configurations.
+*   `src/tools/` : Prompts IA pour la génération d'avatars.
 
 ### Stack Technique
-- **Core** : JavaScript (ES Modules), Canvas API.
-- **Plugins** : `ai-text-plugin`, `text-to-image-plugin`, `kv-plugin`, `upload-plugin`.
-- **Stockage** : IndexedDB.
+*   **Rendu :** Canvas API.
+*   **Internationalisation :** i18n.
+*   **Moteur :** Physique custom.
+*   **Stockage :** kv-plugin (IndexedDB).
 
 ### Déploiement
-L'application est hébergée via **GitHub Pages**.
+L'application est déployée via **GitHub Pages**.
 
 ### Notes de Synchronisation
-Consultez `notification.md` pour le suivi bidirectionnel entre Perchance et le dépôt. **Attention** : Les captures d'écran verrouillées ne doivent pas être régénérées manuellement.
+Consultez `notification.md` pour le suivi bidirectionnel entre Perchance et le repo. **Attention :** Les captures d'écran verrouillées ne doivent pas être régénérées manuellement.
 
 ### Licence
 MIT
 
 ---
 
-## 🇺🇸 English
+## 🇬🇧 English
 
 ### Description
-An interactive application dedicated to the seasonality of fruits and vegetables in Belgium, featuring a detailed calendar, nutritional sheets, preparation tips, and an educational match-3 game.
+An interactive application dedicated to local consumption in Belgium. It features a seasonal calendar, detailed nutritional sheets, preparation tips, and an educational match-3 game to help users choose their produce wisely.
 
 ### Features
-- **Navigation & Content**:
-  - `Fruits & Légumes de Saison` (Home)
-  - `L'Almanach` (Almanac): Detailed sheets and health benefits.
-  - `Le Calendrier` (Calendar): Interactive monthly view.
-  - `Manger Local` (Eat Local): Guide to locally grown produce.
-  - `Match des Saisons` (Season Match): Integrated match-3 game.
-- **Interface**: Detail overlays, i18n support, Canvas-based rendering.
-- **System**: Persistent storage via kv-plugin (IndexedDB).
+*   **Exploration:** Interactive calendar and produce Almanac.
+*   **Localization:** Dedicated section for Belgian-grown produce.
+*   **Education:** Detailed sheets including health benefits and preparation advice.
+*   **Gamification:** "Season Match" (Match-3) game.
+*   **Interface:** Seamless navigation between home, almanac, calendar, game, and local views via a detailed overlay.
 
 ### Controls
-- **Mouse/Touch** : Interaction via buttons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `←`, `→
+*   **Mouse/Touch:** Interaction via buttons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `Recommencer`).
+*   **Navigation:** Navigation arrows (`<`, `>`) and back button ($\leftarrow$).
+*   **Closing:** $\times$
