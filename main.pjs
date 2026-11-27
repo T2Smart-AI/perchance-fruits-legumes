@@ -1,0 +1,7 @@
+$meta
+  title = Fruits et Légumes de Saison
+  description = Découvrez quels fruits et légumes sont de saison et cultivés localement en Belgique, mois par mois. Calendrier interactif, fiches détaillées, bienfaits, conseils de préparation, et un jeu de match-3 en 60 niveaux pour récolter les kawaïs.
+  tags = saison, fruits, légumes, local, belgique, calendrier, alimentation, nutrition, jeu, match-3
+
+generateText = {import:ai-text-plugin}
+kv = {import:kv-plugin}
