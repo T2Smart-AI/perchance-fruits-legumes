@@ -10,17 +10,17 @@ Auto-generated structural notes (kind: game, mode: engine).
 ### ai
 - src/tools/avatar-prompts.json (39058 B)
 ### audio
-- src/README.md (12727 B)
+- src/README.md (13045 B)
 ### core
-- src/app.js (18450 B)
+- src/app.js (19330 B)
 ### support
-- src/data/local.js (6101 B)
 - src/data/products.js (262457 B)
+- src/data/local.js (6101 B)
+- src/data/avatars.js (12665 B)
+- src/data/banners.js (12665 B)
 - src/game.js (64102 B)
 - src/data/nutrition.js (31980 B)
 - src/levels.js (14663 B)
-- src/data/avatars.js (12665 B)
-- src/data/banners.js (12665 B)
 
 ## Perchance lists
 - $meta — 1 items

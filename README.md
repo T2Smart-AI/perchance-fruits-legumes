@@ -1,81 +1,83 @@
-```markdown
 <div align="center">
-  <img src="assets/logo.jpg" alt="Logo" width="200">
-  <h1>fruits-legumes</h1>
-  <p><i>Découvrez quels fruits et légumes sont de saison et cultivés localement en Belgique, mois par mois.</i></p>
-  <p><b>Catégorie:</b> Art / Jeu</p>
-  <a href="https://T2Smart-AI.github.io/perchance-fruits-legumes/">Live Demo</a> | <a href="showcase.html">Showcase</a> | <a href="screenshots/">Gallery</a>
+  <img src="assets/logo.jpg" width="200" alt="Logo">
+  <h1>Fruits &amp; Légumes de Saison</h1>
+  <p>Apprendre en s'amusant</p>
+  <p><b>Éducation</b></p>
+  <a href="https://T2 스마트-AI.github.io/perchance-fruits-legumes/">Demo Live</a> | <a href="showcase.html">Showcase</a>
 </div>
 
-<hr>
+<p align="center"><a href="https://T2Smart-AI.github.io/perchance-fruits-legumes/">🚀 Live demo</a></p>
 
-## 🇧🇪 Français
+<img src="assets/hero.jpg" width="720" alt="hero">
 
-### Description
-Une application interactive dédiée à la consommation locale en Belgique. Elle propose un calendrier saisonnier, des fiches nutritionnelles détaillées, des conseils de préparation et un jeu de match-3 éducatif pour apprendre à mieux choisir ses produits.
+## 🇫🇷 Français
 
-### Fonctionnalités
-*   **Exploration :** Calendrier interactif et Almanach des produits.
-*   **Localisation :** Section dédiée aux produits cultivés en Belgique.
-*   **Éducation :** Fiches détaillées incluant les bienfaits et conseils de préparation.
-*   **Ludification :** Jeu "Match des Saisons" (Match-3).
-*   **Interface :** Navigation fluide entre l'accueil, l'almanach, le calendrier, le jeu et la vue locale via un overlay de détails.
+Découvrez quels fruits et légumes sont de saison et cultivés localement en Belgique, mois par mois. L'application propose un calendrier interactif, des fiches détaillées sur les bienfaits et conseils de préparation, ainsi qu'un jeu de match-3 éducatif.
 
-### Contrôles
-*   **Souris/Toucher :** Interaction via les boutons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `Recommencer`).
-*   **Navigation :** Flèches de navigation (`<`, `>`) et retour arrière ($\leftarrow$).
-*   **Fermeture :** Bouton $\times$ pour fermer les overlays.
+### 🕹️ Commandes & Interface
+**Écrans :**
+- Accueil (`view-home`)
+- L'Almanach (`view-almanach`)
+- Le Calendrier (`view-calendrier`)
+- Match des Saisons (`view-jeu`)
+- Manger Local (`view-local`)
+- Détails (`detailOverlay`)
 
-### Installation Rapide
-*   **Windows :** Double-cliquez sur `start.cmd`.
-*   **macOS/Linux :** Exécutez `sh start.sh`.
-*   **Alternative :** Lancez `python3 -m http.server` (un serveur HTTP est requis pour le chargement des modules ES).
+**Boutons de navigation :**
+- `En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`
+- Navigation : `‹`, `›`, `←`, `🔄`
+- Actions : `Recommencer`, `×`
 
-### Personnalisation
-| Variable | Description | Source |
-| :--- | :--- | :--- |
-| Produits | Liste des fruits et légumes | `src/data/products.js` |
-| Localisation | Données locales Belgique | `src/data/local.js` |
-| Nutrition | Valeurs nutritionnelles | `src/data/nutrition.js` |
-| Niveaux | Configuration du jeu | `src/levels.js` |
-| Visuels | Bannières et avatars | `src/data/banners.js` / `avatars.js` |
-
-### Structure du Projet
-*   `src/app.js` : Cœur de l'application.
-*   `src/game.js` : Logique du jeu de match-3.
-*   `src/data/` : Données et configurations.
-*   `src/tools/` : Prompts IA pour la génération d'avatars.
-
-### Stack Technique
-*   **Rendu :** Canvas API.
-*   **Internationalisation :** i18n.
-*   **Moteur :** Physique custom.
-*   **Stockage :** kv-plugin (IndexedDB).
-
-### Déploiement
-L'application est déployée via **GitHub Pages**.
-
-### Notes de Synchronisation
-Consultez `notification.md` pour le suivi bidirectionnel entre Perchance et le repo. **Attention :** Les captures d'écran verrouillées ne doivent pas être régénérées manuellement.
-
-### Licence
-MIT
+### 🛠️ Technique
+- **Moteur :** Canvas, i18n
+- **Plugins :** AI Text, Text-to-Image, KV-Plugin (IndexedDB), Upload-Plugin
+- **Physique :** Custom
+- **Architecture :**
+  - Core : `src/app.js`
+  - Logique de jeu : `src/game.js`
+  - Données : `products.js`, `local.js`, `avatars.js`, `banners.js`, `nutrition.js`, `levels.js`
+  - Prompts AI : `src/tools/avatar-prompts.json`
 
 ---
 
 ## 🇬🇧 English
 
-### Description
-An interactive application dedicated to local consumption in Belgium. It features a seasonal calendar, detailed nutritional sheets, preparation tips, and an educational match-3 game to help users choose their produce wisely.
+Discover which fruits and vegetables are in season and grown locally in Belgium, month by month. This app features an interactive calendar, detailed fact sheets including health benefits and preparation tips, and an educational match-3 game.
 
-### Features
-*   **Exploration:** Interactive calendar and produce Almanac.
-*   **Localization:** Dedicated section for Belgian-grown produce.
-*   **Education:** Detailed sheets including health benefits and preparation advice.
-*   **Gamification:** "Season Match" (Match-3) game.
-*   **Interface:** Seamless navigation between home, almanac, calendar, game, and local views via a detailed overlay.
+### 🕹️ Controls & Interface
+**Screens :**
+- Home (`view-home`)
+- Almanac (`view-almanach`)
+- Calendar (`view-calendrier`)
+- Seasons Match (`view-jeu`)
+- Eat Local (`view-local`)
+- Details (`detailOverlay`)
 
-### Controls
-*   **Mouse/Touch:** Interaction via buttons (`En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`, `Recommencer`).
-*   **Navigation:** Navigation arrows (`<`, `>`) and back button ($\leftarrow$).
-*   **Closing:** $\times$
+**UI Buttons :**
+- `En ce moment`, `Almanach`, `Calendrier`, `Le Jeu`, `Local`
+- Navigation : `‹`, `›`, `←`, `🔄`
+- Actions : `Recommencer` (Restart), `×` (Close)
+
+### 🛠️ Tech Stack
+- **Engine :** Canvas, i18n
+- **Plugins :** AI Text, Text-to-Image, KV-Plugin (IndexedDB), Upload-Plugin
+- **Physics :** Custom
+- **Source Mapping :**
+  - Core : `src/app.js`
+  - Game Logic : `src/game.js`
+  - Data : `products.js`, `local.js`, `avatars.js`, `banners.js`, `nutrition.js`, `levels.js`
+  - AI Prompts : `src/tools/avatar-prompts.json`
+
+---
+
+## 🖼️ Captures / Screenshots
+
+<img src="screenshots/shot-01.png" width="320" alt="capture 1">
+<img src="screenshots/shot-02.png" width="320" alt="capture 2">
+<img src="screenshots/shot-03.png" width="320" alt="capture 3">
+
+## 🔄 Sync Notes
+This repository is tracked via `notification.md` for two-way synchronization between Perchance and GitHub. Locked screenshots must not be regenerated by hand to maintain version consistency.
+
+## 📄 License
+MIT

@@ -73,11 +73,28 @@
     return searchCache[k];
   }
 
+  function matchCatGroup(p) {
+    if (state.cat !== "tous" && p.cat.toLowerCase() !== state.cat) return false;
+    if (state.group !== "tous" && p.group !== state.group) return false;
+    return true;
+  }
+  const CAT_CHIPS = [
+    { key: "tous", label: "Tous" },
+    { key: "fruit", label: "Fruits" },
+    { key: "légume", label: "Légumes" },
+    { key: "aromatique", label: "Aromatiques" }
+  ];
+  const GROUP_CHIPS = [
+    { key: "tous", label: "Toutes origines" },
+    { key: "saisonnier", label: "Saisonniers" },
+    { key: "exotique", label: "Exotiques" },
+    { key: "ancien", label: "Anciens" }
+  ];
+
   function filtered() {
     const q = state.q.trim().toLowerCase();
     return PRODUCTS.filter(function (p) {
-      if (state.cat !== "tous" && p.cat.toLowerCase() !== state.cat) return false;
-      if (state.group !== "tous" && p.group !== state.group) return false;
+      if (!matchCatGroup(p)) return false;
       if (state.season === "saison" && !(p.always || (p.m && p.m.includes(state.month)))) return false;
       if (state.season === "hors" && (p.always || (p.m && p.m.includes(state.month)) || (p.mc && p.mc.includes(state.month)))) return false;
       if (q && searchKey(p).indexOf(normS(q)) === -1) return false;
@@ -102,15 +119,30 @@
     el.innerHTML = items.map(function (it) {
       return '<button class="chip' + (it.key === currentKey ? " active" : "") + '" data-key="' + it.key + '">' + esc(it.label) + "</button>";
     }).join("");
-    el.querySelectorAll(".chip").forEach(function (b) {
+    // snapshot: onPick may re-render this container, and toggling classes on the
+    // rebuilt buttons afterwards would wipe their (correct) state.
+    const buttons = Array.prototype.slice.call(el.querySelectorAll(".chip"));
+    buttons.forEach(function (b) {
       b.addEventListener("click", function () {
         onPick(b.dataset.key);
-        el.querySelectorAll(".chip").forEach(function (x) { x.classList.toggle("active", x === b); });
+        buttons.forEach(function (x) { x.classList.toggle("active", x === b); });
       });
     });
   }
 
   function renderAlmanach() {
+    makeChips("catChips", CAT_CHIPS, state.cat, function (k) {
+      state.cat = k; renderAlmanach(); renderCalendar();
+    });
+    makeChips("groupChips", GROUP_CHIPS, state.group, function (k) {
+      state.group = k; renderAlmanach(); renderCalendar();
+    });
+    makeChips("seasonChips", [
+      { key: "tous", label: "Toute la saison" },
+      { key: "saison", label: "En saison en " + MONTHS[state.month - 1] },
+      { key: "hors", label: "Hors saison" }
+    ], state.season, function (k) { state.season = k; renderAlmanach(); });
+
     const list = filtered();
     $id("countLine").textContent = list.length + " produit" + (list.length > 1 ? "s" : "") + " affiché" + (list.length > 1 ? "s" : "");
     $id("almanachGrid").innerHTML = list.length
@@ -121,12 +153,20 @@
   function renderCalendar() {
     const m = state.month;
     $id("monthName").textContent = MONTHS[m - 1];
-    const plein = PRODUCTS.filter(function (p) { return p.always || (p.m && p.m.includes(m)); });
-    const conserve = PRODUCTS.filter(function (p) {
+    makeChips("calCatChips", CAT_CHIPS, state.cat, function (k) {
+      state.cat = k; renderCalendar(); renderAlmanach();
+    });
+    makeChips("calGroupChips", GROUP_CHIPS, state.group, function (k) {
+      state.group = k; renderCalendar(); renderAlmanach();
+    });
+    const pool = PRODUCTS.filter(matchCatGroup);
+    const plein = pool.filter(function (p) { return p.always || (p.m && p.m.includes(m)); });
+    const conserve = pool.filter(function (p) {
       return !(p.always || (p.m && p.m.includes(m))) && (p.mc && p.mc.includes(m));
     });
+    const filteredOut = state.cat !== "tous" || state.group !== "tous";
     let h = '<div class="cal-group">Pleine saison &mdash; ' + plein.length + " produit" + (plein.length > 1 ? "s" : "") + "</div>";
-    h += '<div class="grid">' + (plein.length ? plein.map(card).join("") : '<div class="empty">Rien cette fois&hellip;</div>') + "</div>";
+    h += '<div class="grid">' + (plein.length ? plein.map(card).join("") : '<div class="empty">' + (filteredOut ? "Aucun produit ne correspond &agrave; ce filtre en " + MONTHS[m - 1].toLowerCase() + "." : "Rien cette fois&hellip;") + "</div>") + "</div>";
     if (conserve.length) {
       h += '<div class="cal-group">Conserv&eacute; / disponible &mdash; ' + conserve.length + " produit" + (conserve.length > 1 ? "s" : "") + "</div>";
       h += '<div class="grid">' + conserve.map(card).join("") + "</div>";
@@ -329,23 +369,6 @@
 
   function init() {
     renderHeaderAvatars();
-    makeChips("catChips", [
-      { key: "tous", label: "Tous" },
-      { key: "fruit", label: "Fruits" },
-      { key: "légume", label: "Légumes" },
-      { key: "aromatique", label: "Aromatiques" }
-    ], state.cat, function (k) { state.cat = k; renderAlmanach(); });
-    makeChips("groupChips", [
-      { key: "tous", label: "Toutes origines" },
-      { key: "saisonnier", label: "Saisonniers" },
-      { key: "exotique", label: "Exotiques" },
-      { key: "ancien", label: "Anciens" }
-    ], state.group, function (k) { state.group = k; renderAlmanach(); });
-    makeChips("seasonChips", [
-      { key: "tous", label: "Toute la saison" },
-      { key: "saison", label: "En saison en " + MONTHS[state.month - 1] },
-      { key: "hors", label: "Hors saison" }
-    ], state.season, function (k) { state.season = k; renderAlmanach(); });
 
     $id("searchInput").addEventListener("input", function (e) {
       state.q = e.target.value;
