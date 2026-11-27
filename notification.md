@@ -3,9 +3,9 @@
 > Suivi bidirectionnel des différences entre le projet Perchance et le repo GitHub.
 > Tenu à jour par l'agent OpenHands. Les captures `screenshots/*` sont **verrouillées** : ne les régénérez pas sauf demande explicite.
 
-## État — 27/11/2026 23:18:02
+## État — 27/11/2026 23:33:02
 - Sens : **repo → Perchance (édition externe)**
-- Branche : `main` · commit distant `13cc374`
+- Branche : `main` · commit distant `e9b947f`
 - README : relu le 27/11/2026 22:18:46 · Captures : libres
 
 ## Fichiers ajoutés côté distant (0)
@@ -26,6 +26,7 @@ _(aucun)_
 3. Ne touche ni à `screenshots/*` verrouillés ni aux fichiers **genere** (ils seront réécrits).
 
 ## Historique
+- 2026-11-27T22:18:05.128Z — divergences externes (1 fichiers) @e9b947f
 - 2026-11-27T22:03:04.714Z — divergences externes (1 fichiers) @13cc374
 - 2026-11-27T21:48:05.658Z — divergences externes (1 fichiers) @b0b4b19
 - 2026-11-27T21:33:04.589Z — divergences externes (1 fichiers) @dc5473d
@@ -35,4 +36,3 @@ _(aucun)_
 - 2026-11-27T18:45:04.795Z — divergences externes (1 fichiers) @03cdfaf
 - 2026-11-27T18:30:06.868Z — divergences externes (1 fichiers) @98df489
 - 2026-11-27T18:14:16.491Z — divergences externes (1 fichiers) @87a3601
-- 2026-11-27T17:59:16.696Z — divergences externes (1 fichiers) @c8743ac
