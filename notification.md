@@ -3,9 +3,9 @@
 > Suivi bidirectionnel des différences entre le projet Perchance et le repo GitHub.
 > Tenu à jour par l'agent OpenHands. Les captures `screenshots/*` sont **verrouillées** : ne les régénérez pas sauf demande explicite.
 
-## État — 27/11/2026 17:29:17
+## État — 27/11/2026 17:44:15
 - Sens : **repo → Perchance (édition externe)**
-- Branche : `main` · commit distant `f6fe77f`
+- Branche : `main` · commit distant `5ca3b89`
 - README : relu le 27/11/2026 15:56:41 · Captures : libres
 
 ## Fichiers ajoutés côté distant (1)
@@ -14,11 +14,12 @@
 ## Fichiers supprimés côté distant (0)
 _(aucun)_
 
-## Fichiers modifiés (taille différente) (7)
+## Fichiers modifiés (taille différente) (8)
 - `index.html`
 - `src/app.js`
 - `src/README.md`
 - `assets/logo.jpg`
+- `assets/hero.jpg`
 - `showcase.html`
 - `404.html`
 - `README.md`
@@ -29,9 +30,9 @@ _(aucun)_
 - `src/app.js` → **perchance-ok** — JS navigateur — reportable dans src/ du projet Perchance si sans API Node ; sinon mocker (stub + données statiques).
 - `src/README.md` → **a-verifier** — À examiner au cas par cas.
 - `assets/logo.jpg` → **visuels** — Visuel — verrouillé : ne pas régénérer ni remplacer sauf demande explicite.
+- `assets/hero.jpg` → **visuels** — Visuel — verrouillé : ne pas régénérer ni remplacer sauf demande explicite.
 - `showcase.html` → **genere** — Fichier généré par l'exporteur — sera réécrit à la prochaine conversion ; ne pas éditer à la main.
 - `404.html` → **genere** — Fichier généré par l'exporteur — sera réécrit à la prochaine conversion ; ne pas éditer à la main.
-- `README.md` → **genere** — Fichier généré par l'exporteur — sera réécrit à la prochaine conversion ; ne pas éditer à la main.
 
 ## Action requise côté Perchance
 1. Pour chaque fichier **perchance-ok/adaptable** ci-dessus, reporte le changement dans le projet Perchance (`fruits-legumes`), puis relance ⛓️ Chaîne complète.
@@ -39,6 +40,7 @@ _(aucun)_
 3. Ne touche ni à `screenshots/*` verrouillés ni aux fichiers **genere** (ils seront réécrits).
 
 ## Historique
+- 2026-11-27T16:29:19.109Z — divergences externes (8 fichiers) @5ca3b89
 - 2026-11-27T16:14:18.074Z — divergences externes (8 fichiers) @f6fe77f
 - 2026-11-27T15:59:16.664Z — divergences externes (6 fichiers) @0cdf43c
 - 2026-11-27T15:55:16.594Z — divergences externes (6 fichiers) @a17b627
