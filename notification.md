@@ -3,9 +3,9 @@
 > Suivi bidirectionnel des différences entre le projet Perchance et le repo GitHub.
 > Tenu à jour par l'agent OpenHands. Les captures `screenshots/*` sont **verrouillées** : ne les régénérez pas sauf demande explicite.
 
-## État — 27/11/2026 22:13:39
-- Sens : **repo → Perchance (édition externe)**
-- Branche : `main` · commit distant `691ddb5`
+## État — 27/11/2026 22:17:58
+- Sens : **Perchance → repo (export)**
+- Branche : `main` · commit distant `cf24576`
 - README : relu le 27/11/2026 17:48:42 · Captures : libres
 
 ## Fichiers ajoutés côté distant (0)
@@ -21,11 +21,10 @@ _(aucun)_
 _(aucune analyse — aucune divergence significative)_
 
 ## Action requise côté Perchance
-1. Pour chaque fichier **perchance-ok/adaptable** ci-dessus, reporte le changement dans le projet Perchance (`fruits-legumes`), puis relance ⛓️ Chaîne complète.
-2. Pour chaque fichier **desktop-only**, ajoute un mock/simulation (JSON statique, placeholder, feature-detect) au lieu du code Node.
-3. Ne touche ni à `screenshots/*` verrouillés ni aux fichiers **genere** (ils seront réécrits).
+Dernier export Perchance poussé normalement. Si le repo a été édité hors exporteur depuis, relance une vérification Sync : l'agent mettra ce fichier à jour.
 
 ## Historique
+- 2026-11-27T21:13:42.515Z — divergences externes (0 fichiers) @d9f90da
 - 2026-11-27T18:59:16.150Z — divergences externes (1 fichiers) @3df461b
 - 2026-11-27T18:45:04.795Z — divergences externes (1 fichiers) @03cdfaf
 - 2026-11-27T18:30:06.868Z — divergences externes (1 fichiers) @98df489
@@ -35,4 +34,3 @@ _(aucune analyse — aucune divergence significative)_
 - 2026-11-27T17:29:15.038Z — divergences externes (1 fichiers) @71cdb78
 - 2026-11-27T17:14:15.234Z — divergences externes (1 fichiers) @f857d4d
 - 2026-11-27T16:59:15.424Z — divergences externes (1 fichiers) @a862f1a
-- 2026-11-27T16:47:49.642Z — suivi export (0 fichiers) @6ba15f6
